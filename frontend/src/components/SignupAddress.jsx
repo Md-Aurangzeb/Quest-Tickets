@@ -19,7 +19,7 @@ export const SignupAddress = () => {
         <div className="login-signup-container">
             <div className="login-signup-left">
                 <form onSubmit={handleSubmit} className="login-form">
-                    <h1 className="form-heading">Login to Quest Tickets</h1>
+                    <h1 className="form-heading">SignUp to Quest Tickets</h1>
                     <p className="form-detail">Address</p>
                     <input onChange={e => setAdharNumber(e.target.value)} className="from-input" type="text" placeholder="AdharNumber" value={adharNumber} />
                     <input onChange={e => setPANNumber(e.target.value)} className="from-input" type="text" placeholder="PAN Number" value={panNumber} />

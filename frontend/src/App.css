@@ -1,0 +1,227 @@
+:root{
+    --heading:#191C1F;
+    --para:#75808A;
+    --btn:#0666EB;
+    --btn-bg:#F2F1F1;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ /* Navigation */
+
+
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    margin-left: 15vw;
+    margin-top: 5vw;
+    background-color: var(--btn-bg);
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.nav-button{
+    margin: 10px 0;
+    padding: 15px 10px;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+}
+
+.icon{
+    height: 18px;
+    transform: translate(0,2px);
+    margin-right: 20px;
+    background: none;
+}
+
+
+/* Dashboard  */
+
+.Dashborad-container{
+    display: flex;
+    column-gap: 80px;
+}
+
+.DashboardBody-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vw;
+    margin-right: 15vw;
+    width: 100%;
+}
+.body-header{
+    background-color: black;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: 0 20px;
+    color: white;
+    padding-bottom: 20px;
+}
+.card-heading{
+    padding-top: 60px;
+    font-size: 1.5rem;
+}
+.card-about{
+    padding-top: 10px;
+    font-size: 1rem;
+}
+.card-name{
+
+    padding-top: 30px;
+    font-size: 1.5rem;
+}
+.card-number{
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+.current-statement{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    background-color: var(--btn-bg);
+    
+}
+.current-statement-heading{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.current-statement-heading button{
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    transform: translate(0,-10px);
+    
+}
+.sub-current-statement-heading{
+    display: flex;
+}
+.icn{
+    transform: translate(0,10px);
+}
+.current-statement-body{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.current-statement-body-p{
+    padding-bottom: 20px;
+    color: var(--para);
+}
+.success{
+    background-color:rgb(31, 194, 78);
+    border-radius: 8px;
+    padding: 10px 30px;
+}
+.failed{
+    background-color:rgb(255, 0, 0);
+    border-radius: 8px;
+    padding: 10px 30px;
+}
+.body-footer{
+    color: var(--para);
+}
+
+
+/* Transaction */
+
+
+.Transaction-container{
+    display: flex;
+    column-gap: 80px;
+}
+
+.TransactionBody-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vw;
+    margin-right: 15vw;
+    width: 100%;
+}
+
+.transaction-history{
+    margin-top: 20px;
+    background-color: var(--btn-bg);
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+.transaction-history-heading{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.transaction-done{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--para);
+}
+
+
+/* Control Center  */
+
+.ControlCenter-container{
+    display:flex;
+    column-gap: 80px;
+}
+
+.ControlCenterBody-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vw;
+    margin-right: 15vw;
+    width: 100%;
+}
+
+.ControlCenterBody-features{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+.ControlCenterBody-features-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--btn-bg);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--para);
+}
+.ControlCenterBody-features-card-l{
+    transform: translate(-20px,0);
+}
+.ControlCenterBody-features-card-r{
+    transform: translate(20px,0);
+}
+.ControlCenterBody-features-card div{
+    display: flex;
+    justify-content: space-between;
+
+}
+.ControlCenterBody-features-card button{
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    transform: translate(0,-5px);
+}

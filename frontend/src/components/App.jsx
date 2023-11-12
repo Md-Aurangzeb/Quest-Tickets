@@ -3,7 +3,8 @@ import { SignupAddress } from "./SignupAddress";
 import { SignupBasicInfo } from "./SignupBasicInfo";
 import { VarifyLogin } from "./VarifyLogin";
 import { VarifySignup } from "./VarifySignup";
-import "../app.css"
+import "../App.css"
+import { SignupPass } from "./SignupPass";
 function App() {
   return (
     <div>
@@ -11,6 +12,7 @@ function App() {
       <VarifyLogin />
       <SignupBasicInfo />
       <SignupAddress />
+      <SignupPass/>
       <VarifySignup />
     </div>
   );

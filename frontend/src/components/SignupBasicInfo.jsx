@@ -25,7 +25,7 @@ export const SignupBasicInfo = () => {
         <div className="login-signup-container">
             <div className="login-signup-left">
                 <form onSubmit={handleSubmit} className="login-form">
-                    <h1 className="form-heading">Login to Quest Tickets</h1>
+                    <h1 className="form-heading">SignUp to Quest Tickets</h1>
                     <p className="form-detail">Basic information</p>
                     <input onChange={e => setName(e.target.value)} className="from-input" type="text" placeholder="Name" value={name} />
                     <input onChange={e => setPhoneNumber(e.target.value)} className="from-input" type="text" placeholder="Phone Number" value={phoneNumber} />
