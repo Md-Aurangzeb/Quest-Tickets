@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./login-signup.css"
 import scannerIcon from "../Assets/scanner.png"
 import googleIcon from "../Assets/google.png"
@@ -24,7 +25,7 @@ export const VarifyLogin = () => {
         <div className="other-login-signup seprator">
           <button className="btn"><img className="btn-img" src={scannerIcon}></img> Continue with QR Code</button>
           <button className="btn"><img className="btn-img" src={googleIcon} alt="img"></img>Continue with Google</button>
-          <p className="form-p">Don't have an account?<a className="form-a" href="#"> Signup</a></p>
+          <p className="form-p">Don't have an account?<Link className="form-a" to="/signupbasicinfo"> Signup</Link></p>
         </div>
       </div>
       <div className="login-signup-right">

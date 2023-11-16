@@ -63,6 +63,7 @@
     padding: 0 20px;
     color: white;
     padding-bottom: 20px;
+    box-shadow: 2px 2px 2px 2px gray;
 }
 .card-heading{
     padding-top: 60px;
@@ -224,4 +225,7 @@
     border: none;
     font-size: 1.5rem;
     transform: translate(0,-5px);
+}
+.ControlCenterBody-features-card p{
+    padding-top: 20px;
 }

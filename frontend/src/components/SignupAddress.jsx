@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./login-signup.css"
 import scannerIcon from "../Assets/scanner.png"
 import googleIcon from "../Assets/google.png"
@@ -25,12 +26,14 @@ export const SignupAddress = () => {
                     <input onChange={e => setPANNumber(e.target.value)} className="from-input" type="text" placeholder="PAN Number" value={panNumber} />
                     <input onChange={e => setAddress(e.target.value)} className="from-input" type="text" placeholder="Address" value={address} />
                     <input onChange={e => setPincode(e.target.value)} className="from-input" type="text" placeholder="Pincode" value={pincode} />
-                    
-                    <button className="submit-button">Next</button>
+                    <Link to="/signuppass">
+                        <button className="submit-button">Next</button>
+                    </Link>
+
                 </form>
                 <div className="other-login-signup seprator">
                     <button className="btn"><img className="btn-img" src={googleIcon} alt="img"></img>Continue with Google</button>
-                    <p className="form-p">Already have an account?<a className="form-a" href="#"> Login</a></p>
+                    <p className="form-p">Already have an account?<Link className="form-a" to="/login"> Login</Link></p>
                 </div>
             </div>
             <div className="login-signup-right">

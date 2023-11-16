@@ -1,6 +1,6 @@
 import link from "../Assets/link.png"
 export const DashboardBody = () => {
-    const name = "Mizanur Rahman";
+    const name = "Sleepyhead";
     const date = new Date();
     return (
         <div className="DashboardBody-container">

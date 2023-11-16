@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./login-signup.css"
 import scannerIcon from "../Assets/scanner.png"
 import googleIcon from "../Assets/google.png"
@@ -38,11 +39,12 @@ export const SignupBasicInfo = () => {
                             ))
                         }
                     </select>
-                    <button className="submit-button">Next</button>
+                    <Link to="/signupaddress"><button className="submit-button">Next</button>
+                    </Link>
                 </form>
                 <div className="other-login-signup seprator">
                     <button className="btn"><img className="btn-img" src={googleIcon} alt="img"></img>Continue with Google</button>
-                    <p className="form-p">Already have an account?<a className="form-a" href="#"> Login</a></p>
+                    <p className="form-p">Already have an account?<Link className="form-a" to="/login"> Login</Link></p>
                 </div>
             </div>
             <div className="login-signup-right">
