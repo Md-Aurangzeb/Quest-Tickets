@@ -1,17 +1,8 @@
 // ModalComponent.jsx
 import React from "react";
 import Modal from "react-modal";
+import "./modalStyles.css";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
 
 Modal.setAppElement("#root"); // Make sure to set the root element for accessibility
 
@@ -20,15 +11,13 @@ export const SetpinModal = ({ isOpen, onRequestClose }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      style={customStyles}
       contentLabel="Example Modal"
+      className="custom-style"
     >
-      <h2>Modal Title</h2>
-      <p>This is a paragraph inside the modal.</p>
-      <label>
-        Number Input:
-        <input type="number" />
-      </label>
+      <h2>Set Your four digit pin</h2>
+      <input className="modal-input" placeholder="Enter your PIN" type="password"/>
+      <input className="modal-input" placeholder="Confirm your PIN" type="number" />
+      <button className="modal-btn">Set PIN</button>
     </Modal>
   );
 };

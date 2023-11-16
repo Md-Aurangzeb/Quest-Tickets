@@ -3,6 +3,7 @@ import { ControlCenterBodyFeaturesCardLeft } from "./ControlCenterBodyFeaturesCa
 import { ControlCenterBodyFeaturesCardRight } from "./ControlCenterBodyFeaturesCardRight"
 import {SetpinModal} from "./Modal/SetpinModal"
 import { useState } from 'react';
+import { Temp } from './Temp';
 export const ControlCenterBody = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const handleClickSetpin=()=>{
@@ -22,7 +23,7 @@ export const ControlCenterBody = () => {
                 <p className="card-about">Manage your card settings and usage</p>
             </div>
             <div className="ControlCenterBody-features">
-                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Domestic Usage" />
+                <Temp icon="fa-solid fa-list" name="Domestic Usage" />
                 <ControlCenterBodyFeaturesCardRight icon="" name="International Usage" />
             </div>
             <div className="ControlCenterBody-features">
