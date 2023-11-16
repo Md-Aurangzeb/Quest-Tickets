@@ -23,7 +23,7 @@ function App() {
           <Route path='/signupbasicinfo' element={<SignupBasicInfo />}/>
           <Route path='/signupaddress' element={<SignupAddress />}/>
           <Route path='/signuppass' element={<SignupPass />}/>
-          <Route path='/varifysignup' element={<VarifySignup />}/>
+          <Route path='/verifysignup' element={<VarifySignup />}/>
         </Routes>
       </Router>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login-signup.css"
 // import scannerIcon from "../Assets/scanner.png"
 import googleIcon from "../Assets/google.png"

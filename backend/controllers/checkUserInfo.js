@@ -43,7 +43,7 @@ const checkUserInfo = () => {
                 const { password, cPassword } = req.body
                 const strongPassTrue = password.search(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)
                 if (strongPassTrue) {
-                    return res.send(400).send("Chose a strong Password!")
+                    return res.status(400).send("Chose a strong Password!")
                 }
 
                 if (password!=cPassword) {
