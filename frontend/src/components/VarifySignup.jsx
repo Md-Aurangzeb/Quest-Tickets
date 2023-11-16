@@ -10,10 +10,10 @@ import bgCoinImgBottom from "../Assets/login-signup-bg-bottom-coin.png"
 
 
 export const VarifySignup = () => {
-    const [ OTP, setOTP ] = useState("");
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(OTP);
+  const [OTP, setOTP] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(OTP);
   }
   return (
     <div className="login-signup-container">
@@ -21,7 +21,7 @@ export const VarifySignup = () => {
         <form onSubmit={handleSubmit} className="login-form">
           <h1 className="form-heading">SignUp to Quest Tickets</h1>
           <p className="form-detail">OTP is sent to your registered Email</p>
-          <input onChange={e=>setOTP(e.target.value)} className="from-input" type="number" placeholder="OTP" value={OTP} />
+          <input onChange={e => setOTP(e.target.value)} className="from-input" type="number" placeholder="OTP" value={OTP} />
           <button className="submit-button">Varify OTP</button>
         </form>
         <div className="other-login-signup seprator">

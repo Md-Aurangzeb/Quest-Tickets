@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 import otpGenerator from 'otp-generator'
 import otpModel from '../models/otp.js'
+import { User } from "../models/signupModel.js";
+import bcrypt from "bcrypt";
 
 const otp = () => {
 
@@ -65,6 +67,60 @@ const otp = () => {
             }
 
 
+        },
+        async verifyOtp(req, res) {
+            try {
+                const { name, phone, email, age, gender, adhar, pan, address, pincode, password, otp } = req.body;
+                const findOtp = await otpModel.findOne({ email: email })
+                if (findOtp == null) {
+                    return res.status(403).send("Access Denied")
+                }
+
+                if (findOtp.otp != otp) {
+                    return res.status(400).send("Invalid OTP")
+                }
+
+                const findPhone = await User.findOne({ phone: phone })
+                const findEmail = await User.findOne({ email: email })
+                const findAadher = await User.findOne({ adhar: adhar })
+                const findPan = await User.findOne({ pan: pan })
+                if (findPhone != null) {
+                    return res.status(403).send("Accesss Denied.")
+                }
+
+                if (findEmail != null) {
+                    return res.status(403).send("Accesss Denied.")
+                }
+
+                if (findAadher != null) {
+                    return res.status(403).send("Accesss Denied.")
+                }
+
+                if (findPan != null) {
+                    return res.status(403).send("Accesss Denied.")
+                }
+
+                const newUser = new User({
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    age: age,
+                    gender: gender,
+                    adhar: adhar,
+                    pan: pan,
+                    address: address,
+                    pincode: pincode,
+                    password: bcrypt.hashSync(password, 10)
+                })
+                newUser.save().then((result) => {
+                    res.send("User Created Successfully");
+                }).catch((err) => {
+                    res.status(500).send("Unable to create User" + err);
+                });
+
+            } catch (error) {
+                res.status(500).send("Internal server Error " + error)
+            }
         }
     }
 }
