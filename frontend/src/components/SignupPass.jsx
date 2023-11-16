@@ -27,15 +27,24 @@ export const SignupPass = () => {
       cPassword: confirmPassword
     }
 
+    const email = localStorage.getItem('BasicInfo')
+    const oriEmail = (JSON.parse(email).email)
+
     axios.post(`${URL}/checkpass`, info).then((res) => {
       if (res.data === 'ok') {
         localStorage.setItem('setPassword', password)
-        navigate('/verifysignup')
+        const id = toast.loading("Sending OTP...")
+        axios.post(`${URL}/sendotp`, { email: oriEmail }).then(() => {
+          toast.update(id, { render: "OTP Sent", type: "success", isLoading: false });
+          navigate('/verifysignup')
+        }).catch((err) => {
+          toast.update(id, { render: "Unable to sent OTP", type: "error", isLoading: false });
+        })
       }
     }).catch((err) => {
-      console.log(err)
       toast.error(err.response.data)
     })
+
   }
 
 
