@@ -26,9 +26,9 @@ export const SignupAddress = () => {
                     <input onChange={e => setPANNumber(e.target.value)} className="from-input" type="text" placeholder="PAN Number" value={panNumber} />
                     <input onChange={e => setAddress(e.target.value)} className="from-input" type="text" placeholder="Address" value={address} />
                     <input onChange={e => setPincode(e.target.value)} className="from-input" type="text" placeholder="Pincode" value={pincode} />
-                    <Link to="/signuppass">
+                    {/* <Link to="/signuppass"> */}
                         <button className="submit-button">Next</button>
-                    </Link>
+                    {/* </Link> */}
 
                 </form>
                 <div className="other-login-signup seprator">

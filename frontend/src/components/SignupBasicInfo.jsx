@@ -7,6 +7,9 @@ import googleIcon from "../Assets/google.png"
 import bgCardImg from "../Assets/login-signup-bg-card.png"
 import bgCoinImgTop from "../Assets/login-signup-bg-top-coin.png"
 import bgCoinImgBottom from "../Assets/login-signup-bg-bottom-coin.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const SignupBasicInfo = () => {
     const options = [
         { value: "", text: "Gender" },
@@ -18,14 +21,25 @@ export const SignupBasicInfo = () => {
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
     const [gender, setGender] = useState(options[0].value);
-    const handleSubmit = (e) => {
+
+    const funcBasicInfo = (e) => {
         e.preventDefault();
-        console.log(email);
+        if(name===null && name.length>=4) {return toast.error("Enter a valid name.")}
+        if(phoneNumber!=10) {
+            return toast.error("Enter a valid phone Number.")
+        }
+        if(age<=18){
+            return toast.error("Your are not eligible.")
+        }
+        // todo : have to check the email already exist or not.
     }
+
+
     return (
         <div className="login-signup-container">
+            <ToastContainer />
             <div className="login-signup-left">
-                <form onSubmit={handleSubmit} className="login-form">
+                <form className="login-form">
                     <h1 className="form-heading">SignUp to Quest Tickets</h1>
                     <p className="form-detail">Basic information</p>
                     <input onChange={e => setName(e.target.value)} className="from-input" type="text" placeholder="Name" value={name} />
@@ -39,8 +53,7 @@ export const SignupBasicInfo = () => {
                             ))
                         }
                     </select>
-                    <Link to="/signupaddress"><button className="submit-button">Next</button>
-                    </Link>
+                    <button className="submit-button" onClick={funcBasicInfo} >Next</button>
                 </form>
                 <div className="other-login-signup seprator">
                     <button className="btn"><img className="btn-img" src={googleIcon} alt="img"></img>Continue with Google</button>
