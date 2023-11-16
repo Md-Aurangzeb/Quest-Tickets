@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login-signup.css"
-import scannerIcon from "../Assets/scanner.png"
+// import scannerIcon from "../Assets/scanner.png"
 import googleIcon from "../Assets/google.png"
 import bgCardImg from "../Assets/login-signup-bg-card.png"
 import bgCoinImgTop from "../Assets/login-signup-bg-top-coin.png"
@@ -12,14 +12,15 @@ export const SignupAddress = () => {
     const [panNumber, setPANNumber] = useState("");
     const [address, setAddress] = useState("");
     const [pincode, setPincode] = useState("");
-    const handleSubmit = (e) => {
+
+    const funcValidation = (e) => {
         e.preventDefault();
-        console.log(e.target);
+        
     }
     return (
         <div className="login-signup-container">
             <div className="login-signup-left">
-                <form onSubmit={handleSubmit} className="login-form">
+                <form className="login-form">
                     <h1 className="form-heading">SignUp to Quest Tickets</h1>
                     <p className="form-detail">Address</p>
                     <input onChange={e => setAdharNumber(e.target.value)} className="from-input" type="text" placeholder="AdharNumber" value={adharNumber} />
@@ -27,7 +28,7 @@ export const SignupAddress = () => {
                     <input onChange={e => setAddress(e.target.value)} className="from-input" type="text" placeholder="Address" value={address} />
                     <input onChange={e => setPincode(e.target.value)} className="from-input" type="text" placeholder="Pincode" value={pincode} />
                     {/* <Link to="/signuppass"> */}
-                        <button className="submit-button">Next</button>
+                    <button className="submit-button" onClick={funcValidation}>Next</button>
                     {/* </Link> */}
 
                 </form>
@@ -38,8 +39,8 @@ export const SignupAddress = () => {
             </div>
             <div className="login-signup-right">
                 <img className="mid" src={bgCardImg} alt="img"></img>
-                <img className="top-right" src={bgCoinImgTop} ></img>
-                <img className="bottom-left" src={bgCoinImgBottom}></img>
+                <img className="top-right" src={bgCoinImgTop} alt="" />
+                <img className="bottom-left" src={bgCoinImgBottom} alt="" />
             </div>
         </div>
     );
