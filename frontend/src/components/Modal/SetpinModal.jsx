@@ -15,7 +15,7 @@ const customStyles = {
 
 Modal.setAppElement("#root"); // Make sure to set the root element for accessibility
 
-const ModalComponent = ({ isOpen, onRequestClose }) => {
+export const SetpinModal = ({ isOpen, onRequestClose }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -33,4 +33,3 @@ const ModalComponent = ({ isOpen, onRequestClose }) => {
   );
 };
 
-export default ModalComponent;

@@ -1,8 +1,7 @@
 import Modal from 'react-modal';
-import {useState} from 'react'
 import { ControlCenterBodyFeaturesCardLeft } from "./ControlCenterBodyFeaturesCardLeft"
 import { ControlCenterBodyFeaturesCardRight } from "./ControlCenterBodyFeaturesCardRight"
-import ModalComponent from "./Modal/SetpinModal"
+import {SetpinModal} from "./Modal/SetpinModal"
 import { useState } from 'react';
 export const ControlCenterBody = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -37,7 +36,7 @@ export const ControlCenterBody = () => {
             <div className="ControlCenterBody-features">
                 <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="View Statement" onClick={handleClickViewStatement}/>
                 <ControlCenterBodyFeaturesCardRight icon="" name="Set Pin" onClick={handleClickSetpin}/>
-                <ModalComponent isOpen={isModalOpen} onRequestClose={closeModal} />
+                <SetpinModal isOpen={isModalOpen} onRequestClose={closeModal} />
             </div>
 
         </div>
