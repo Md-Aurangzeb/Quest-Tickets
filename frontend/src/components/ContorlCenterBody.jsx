@@ -1,9 +1,11 @@
-
+import Modal from 'react-modal';
 import { ControlCenterBodyFeaturesCardLeft } from "./ControlCenterBodyFeaturesCardLeft"
 import { ControlCenterBodyFeaturesCardRight } from "./ControlCenterBodyFeaturesCardRight"
+import {ModalComponent} from "./Modal/SetpinModal"
 export const ControlCenterBody = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
     const handleClickSetpin=()=>{
-        console.log("set pin");
+        setModalOpen(true);
     }
     const handleClickViewStatement=()=>{
         console.log("view statement");
