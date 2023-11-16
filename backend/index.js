@@ -5,9 +5,13 @@ import routeRoute from "./routes/users.js"
 import mongoose from "mongoose";
 import nodemailer from "nodemailer";
 import web from "./routes/web.js";
+import cors from 'cors'
 
 
 const app = express();
+app.use(cors())
+
+
 // app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
 const uri = "mongodb+srv://" + process.env.USER_ID + ":" + process.env.USER_PASSWORD + "@questtickets.sj8r05q.mongodb.net";
