@@ -118,6 +118,8 @@ const otp = () => {
                     res.status(500).send("Unable to create User" + err);
                 });
 
+                await otpModel.deleteOne({email:email})
+
             } catch (error) {
                 res.status(500).send("Internal server Error " + error)
             }

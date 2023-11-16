@@ -1,7 +1,6 @@
 import { TransactionHistory } from "./TransactionHistory";
 
 export const TransactionBody = () => {
-    const name = "";
     const date = new Date();
     const PaymentMethod = "aidoifuodijfflkdjf09a098djfldkjf";
     return (
