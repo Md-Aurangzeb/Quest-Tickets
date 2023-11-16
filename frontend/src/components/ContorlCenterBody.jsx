@@ -1,8 +1,13 @@
 
-import {ControlCenterBodyFeaturesCardLeft} from "./ControlCenterBodyFeaturesCardLeft"
-import {ControlCenterBodyFeaturesCardRight} from "./ControlCenterBodyFeaturesCardRight"
+import { ControlCenterBodyFeaturesCardLeft } from "./ControlCenterBodyFeaturesCardLeft"
+import { ControlCenterBodyFeaturesCardRight } from "./ControlCenterBodyFeaturesCardRight"
 export const ControlCenterBody = () => {
-
+    const handleClickSetpin=()=>{
+        console.log("set pin");
+    }
+    const handleClickViewStatement=()=>{
+        console.log("view statement");
+    }
     return (
         <div className="ControlCenterBody-container">
             <div className="body-header">
@@ -11,22 +16,22 @@ export const ControlCenterBody = () => {
                 <p className="card-about">Manage your card settings and usage</p>
             </div>
             <div className="ControlCenterBody-features">
-                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Domestic Usage"/>
+                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Domestic Usage" />
                 <ControlCenterBodyFeaturesCardRight icon="" name="International Usage" />
             </div>
             <div className="ControlCenterBody-features">
-                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Block and Replace"/>
+                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Block and Replace" />
                 <ControlCenterBodyFeaturesCardRight icon="" name="Activate-E Statement" />
             </div>
             <div className="ControlCenterBody-features">
-                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Over-Limit facility"/>
-                <ControlCenterBodyFeaturesCardRight icon="" name="Set Pin" />
+                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Over-Limit facility" />
+                <ControlCenterBodyFeaturesCardRight icon="" name="Auto Debit" />
             </div>
             <div className="ControlCenterBody-features">
-                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="Auto Debit"/>
-                <ControlCenterBodyFeaturesCardRight icon="" name="View Statement" />
+                <ControlCenterBodyFeaturesCardLeft icon="fa-solid fa-list" name="View Statement" onClick={handleClickViewStatement}/>
+                <ControlCenterBodyFeaturesCardRight icon="" name="Set Pin" onClick={handleClickSetpin}/>
             </div>
-            
+
         </div>
     )
 }
