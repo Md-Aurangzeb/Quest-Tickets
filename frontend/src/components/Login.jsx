@@ -28,15 +28,15 @@ export const Login = () => {
           <button className="submit-button">Sent OTP</button>
         </form>
         <div className="other-login-signup seprator">
-          <button className="btn"><img className="btn-img" src={scannerIcon}></img> Continue with QR Code</button>
+          <button className="btn"><img className="btn-img" src={scannerIcon} alt=""></img> Continue with QR Code</button>
           <button className="btn"><img className="btn-img" src={googleIcon} alt="img"></img>Continue with Google</button>
           <p className="form-p">Don't have an account?<Link  className="form-a" to="/signupbasicinfo"> Signup</Link></p>
         </div>
       </div>
       <div className="login-signup-right">
         <img className="mid" src={bgCardImg} alt="img"></img>
-        <img className="top-right" src={bgCoinImgTop} ></img>
-        <img className="bottom-left" src={bgCoinImgBottom}></img>
+        <img className="top-right" src={bgCoinImgTop} alt=""></img>
+        <img className="bottom-left" src={bgCoinImgBottom} alt=""></img>
       </div>
     </div>
   );
