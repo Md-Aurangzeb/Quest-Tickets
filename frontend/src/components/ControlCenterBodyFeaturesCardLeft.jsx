@@ -9,7 +9,7 @@ export const ControlCenterBodyFeaturesCardLeft=(props)=>{
     return (<div className="ControlCenterBody-features-card-l ControlCenterBody-features-card">
     <div>
     
-<img className="icon" src={link}></img>
+<img className="icon" src={link} alt=""></img>
         <button onClick={handleButtonClick}>{">"}</button>
     </div>
     <p>{props.name}</p>

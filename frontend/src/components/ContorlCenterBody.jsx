@@ -1,4 +1,3 @@
-import Modal from 'react-modal';
 import { ControlCenterBodyFeaturesCardLeft } from "./ControlCenterBodyFeaturesCardLeft"
 import { ControlCenterBodyFeaturesCardRight } from "./ControlCenterBodyFeaturesCardRight"
 import {SetpinModal} from "./Modal/SetpinModal"

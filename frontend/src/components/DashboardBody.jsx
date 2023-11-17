@@ -15,7 +15,7 @@ export const DashboardBody = () => {
                 <div className="current-statement-heading">
                     <div className="sub-current-statement-heading">
                         <div className="icn">
-                            <img className="icon" src={link}></img></div>
+                            <img className="icon" src={link} alt=""></img></div>
                         <div className="heading">
                             <p style={{ fontSize: "1.5rem" }}>Current Statement</p>
                             <p>{date.getUTCMonth()} {date.getFullYear()}</p>

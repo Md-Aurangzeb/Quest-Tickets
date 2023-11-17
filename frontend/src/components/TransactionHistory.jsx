@@ -1,8 +1,5 @@
 import React from "react"
 export const TransactionHistory = (props) => {
-    const name = "";
-    const date = new Date();
-    const PaymentMethod="aidoifuodijfflkdjf09a098djfldkjf";
     return (
         <div className="transaction-done">
             <div>
