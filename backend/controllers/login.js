@@ -84,7 +84,7 @@ const login = () => {
                     return res.status(403).send("Access Denied")
                 }
 
-                if (findOtp.otp !== otp) {
+                if (findOtp.otp != otp) {
                     return res.status(403).send("Invalid OTP")
                 }
 

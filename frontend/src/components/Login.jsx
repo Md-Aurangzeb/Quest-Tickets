@@ -29,6 +29,7 @@ export const Login = () => {
     const id = toast.loading("Sending OTP...")
     axios.post(`${URL}/login`, info).then((res) => {
       toast.update(id, { render: "OTP Sent", type: "success", isLoading: false });
+      localStorage.setItem('email', email)
       setTimeout(() => {
         navigate('/varifylogin')
       }, 1000)
