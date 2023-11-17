@@ -12,7 +12,7 @@ const app = express();
 app.use(cors())
 
 
-// app.use(bodyParser.urlencoded({extended:true}))
+//connect with MongoDB
 app.use(bodyParser.json());
 const uri = "mongodb+srv://" + process.env.USER_ID + ":" + process.env.USER_PASSWORD + "@questtickets.sj8r05q.mongodb.net";
 mongoose.connect(uri + "/userDB").then(() => {
@@ -20,39 +20,14 @@ mongoose.connect(uri + "/userDB").then(() => {
 }).catch(err => console.log(err));
 
 
-
-// const transpoter = nodemailer.createTransport({
-//     service:"gmail",
-//     auth: {
-//         user: process.env.SMTP_MAIL,
-//         pass: process.env.SMTP_PASSWORD
-//     }
-// })
-// const mailOption = ({
-//     from: process.env.SMTP_MAIL,
-//     to: "aurangzebalam896@gmail.com",
-//     subject: "Admin Login OTP",
-//     html: `
-//         <p>Your OTP is <strong>${3453}</strong></p>
-//     `
-// })
-
-// transpoter.sendMail(mailOption, (err, info) => {
-//     if (err) {
-//         console.log(err)
-//     }
-//     else{
-//         console.log("mail sent successfully.")
-//     }
-// })
-
-
+//Router
 app.get("/", async (req, res) => {
     res.send("home page")
 })
 app.use("/users", routeRoute);
 web(app)
 
+//Server Lintening
 app.listen(process.env.PORT, () => {
     console.log(`server is live at http://localhost:${process.env.PORT}`);
 })
