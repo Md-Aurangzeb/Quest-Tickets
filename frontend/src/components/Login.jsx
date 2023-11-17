@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./login-signup.css"
 import scannerIcon from "../Assets/scanner.png"
@@ -7,28 +7,45 @@ import googleIcon from "../Assets/google.png"
 import bgCardImg from "../Assets/login-signup-bg-card.png"
 import bgCoinImgTop from "../Assets/login-signup-bg-top-coin.png"
 import bgCoinImgBottom from "../Assets/login-signup-bg-bottom-coin.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
 
 
 export const Login = () => {
+  const URL = process.env.REACT_APP_BACKEND_URL
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleChange = (e) => {
-    setEmail(e.target.value);
-  }
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    const info = {
+      email: email,
+      password: password
+    }
+
+    const id = toast.loading("Sending OTP...")
+    axios.post(`${URL}/login`, info).then((res) => {
+      toast.update(id, { render: "OTP Sent", type: "success", isLoading: false });
+      setTimeout(() => {
+        navigate('/varifylogin')
+      }, 1000)
+    }).catch(err => {
+      toast.error(err.response.data)
+      toast.update(id, { render: "Unable to sent OTP", type: "error", isLoading: false });
+    })
   }
 
 
   return (
     <div className="login-signup-container">
+      <ToastContainer />
       <div className="login-signup-left">
         <form className="login-form">
           <h1 className="form-heading">Login to Quest Tickets</h1>
-          <input onChange={handleChange} className="from-input" type="email" placeholder="Email" value={email} />
+          <input onChange={(e) => { setEmail(e.target.value) }} className="from-input" type="email" placeholder="Email" value={email} />
           <input onChange={(e) => { setPassword(e.target.value) }} className="from-input" type="password" placeholder="Password" value={password} />
           <button className="submit-button" onClick={handleSubmit}>Sent OTP</button>
         </form>
