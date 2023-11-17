@@ -36,7 +36,9 @@ export const SignupPass = () => {
         const id = toast.loading("Sending OTP...")
         axios.post(`${URL}/sendotp`, { email: oriEmail }).then(() => {
           toast.update(id, { render: "OTP Sent", type: "success", isLoading: false });
-          navigate('/verifysignup')
+          setTimeout(() => {
+            navigate('/verifysignup')
+          }, 1000)
         }).catch((err) => {
           toast.update(id, { render: "Unable to sent OTP", type: "error", isLoading: false });
         })
