@@ -104,14 +104,15 @@ button:hover {
 
 .top-right {
   position: fixed;
-  left: 78%;
-  top: 23%;
+  left: 80%;
+  top: 18%;
 }
 
 .mid {
   position: fixed;
-  left: 55%;
-  top: 30%;
+  left: 50%;
+  top: 20%;
+  height: 600px;
   z-index: 3;
 }
 
