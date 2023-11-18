@@ -1,5 +1,4 @@
 import React from "react"
-import link from "../Assets/link.png";
 import { useState } from "react";
 export const ControlCenterBodyFeaturesCardLeftbtn = (props) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -11,10 +10,10 @@ export const ControlCenterBodyFeaturesCardLeftbtn = (props) => {
   };
   return (<div className="ControlCenterBody-features-card-l ControlCenterBody-features-card">
     <div>
-    <img className="icon" src={link} alt=""></img>
+    <img className="icon-c" src={props.icon} alt=""></img>
       <input type="checkbox" checked={isChecked} name="checkbox" id="toggle"/>
       <label onClick={handleButtonClick} className="switch" htmlFor="toggle"></label>
     </div>
-    <p>{props.name}</p>
+    <p className="bold">{props.name}</p>
   </div>)
 }

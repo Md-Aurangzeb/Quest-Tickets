@@ -1,5 +1,3 @@
-import link from "../Assets/link.png"
-
 export const ControlCenterBodyFeaturesCardRight=(props)=>{
     const handleButtonClick = () => {
         if (props.onClick) {
@@ -8,9 +6,9 @@ export const ControlCenterBodyFeaturesCardRight=(props)=>{
       };
     return (<div className="ControlCenterBody-features-card-r ControlCenterBody-features-card">
     <div>
-    <img className="icon" src={link} alt=""></img>
+    <img className="icon-c" src={props.icon} alt=""></img>
         <button onClick={handleButtonClick}>{">"}</button>
     </div>
-    <p>{props.name}</p>
+    <p className="bold">{props.name}</p>
 </div>)
 }

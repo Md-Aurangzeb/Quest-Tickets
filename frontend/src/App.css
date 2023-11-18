@@ -8,7 +8,9 @@
     margin: 0;
     padding: 0;
 }
-
+.bold{
+    font-weight:bold;
+}
  /* Navigation */
 
 
@@ -31,12 +33,21 @@
 }
 
 .icon{
-    height: 18px;
+    height: 30px;
     transform: translate(0,2px);
-    margin-right: 20px;
+    margin-right: 10px;
+    translate: 0 7px;
     background: none;
 }
-
+.icon-c{
+    height: 20px;
+}
+.icon-l{
+    height: 25px;
+    translate: 0 4px;
+    margin-right: 15px;
+    margin-left: 4px;
+}
 
 /* Dashboard  */
 
