@@ -5,7 +5,7 @@ import "./modalStyles.css";
 
 Modal.setAppElement("#root");
 
-export const ConfirmationModel = ({ isOpen, onRequestClose }) => {
+export const ConfirmationModel = ({ isOpen, onRequestClose ,name,on}) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -13,9 +13,12 @@ export const ConfirmationModel = ({ isOpen, onRequestClose }) => {
       contentLabel="Example Modal"
       className="custom-style"
     >
-      <h2>Do you want to {props.name}</h2>
+      <h2>Do you want to {on===true?"off":"allow"} {name}</h2>
+      <div className="modal-div">
       <button className="modal-btn">Yes</button>
       <button className="modal-btn">No</button>
+      </div>
+      
     </Modal>
   );
 };

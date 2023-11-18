@@ -8,6 +8,8 @@ export const TransactionBody = () => {
             <div className="body-header">
                 <h2 className="card-heading">Recent Transactions</h2>
                 <p className="card-number">1234 1234 1234 1234</p>
+                <p className="card-validity">VALILD THRU</p>
+                <p className="card-validity">45/52</p>
                 <p className="card-about">view your recent transactions</p>
             </div>
             <div className="transaction-history">

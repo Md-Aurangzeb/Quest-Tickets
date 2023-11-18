@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: column;
     width: 25vw;
-    margin-left: 15vw;
     margin-top: 5vw;
     background-color: var(--btn-bg);
     border-radius: 10px;
@@ -44,6 +43,8 @@
 .Dashborad-container{
     display: flex;
     column-gap: 80px;
+    width: 60vw;
+    margin: auto;
 }
 
 .DashboardBody-container{
@@ -52,11 +53,11 @@
     align-items: center;
     flex-direction: column;
     margin-top: 5vw;
-    margin-right: 15vw;
     width: 100%;
 }
 .body-header{
-    background-color: black;
+    background-image:url(https://olive-content.axisbank.com/card_face/521.png);
+    background-size: 100% 100%; 
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -72,6 +73,10 @@
 .card-about{
     padding-top: 10px;
     font-size: 1rem;
+}
+.card-validity{
+    padding-top: 5px;
+    font-size: .9rem;
 }
 .card-name{
 
@@ -145,6 +150,8 @@
 .Transaction-container{
     display: flex;
     column-gap: 80px;
+    width: 60vw;
+    margin: auto;
 }
 
 .TransactionBody-container{
@@ -153,7 +160,6 @@
     align-items: center;
     flex-direction: column;
     margin-top: 5vw;
-    margin-right: 15vw;
     width: 100%;
 }
 
@@ -183,6 +189,8 @@
 .ControlCenter-container{
     display:flex;
     column-gap: 80px;
+    width: 60vw;
+    margin: auto;
 }
 
 .ControlCenterBody-container{
@@ -191,7 +199,6 @@
     align-items: center;
     flex-direction: column;
     margin-top: 5vw;
-    margin-right: 15vw;
     width: 100%;
 }
 
@@ -229,3 +236,34 @@
 .ControlCenterBody-features-card p{
     padding-top: 20px;
 }
+
+/* btn  */
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 2.2rem;
+    height: 1.2rem;
+    background-color:var(--para);
+    border-radius: 1.2rem;
+    transition: all .4s linear;
+  }
+  .switch::after{
+    content: "";
+    position: absolute;
+    top: .15rem;
+    left: .15rem;
+    width: .9rem;
+    height: .9rem;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all .4s linear;
+  }
+  #toggle:checked + .switch:after{
+    transform: translate(1rem,0);
+  }
+  #toggle:checked + .switch{
+    background-color: var(--btn);
+  }
+  #toggle{
+    display: none;
+  }

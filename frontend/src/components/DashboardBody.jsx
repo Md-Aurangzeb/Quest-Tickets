@@ -9,6 +9,8 @@ export const DashboardBody = () => {
                 <p className="card-about">Your card account summary</p>
                 <p className="card-name">Ace</p>
                 <p className="card-number">1234 1234 1234 1234</p>
+                <p className="card-validity">VALILD THRU</p>
+                <p className="card-validity">45/52</p>
             </div>
 
             <div className="current-statement">
