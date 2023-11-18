@@ -53,7 +53,7 @@
   padding: 15px 15px;
   margin: 15px;
   width: 108%;
-  background-color: #0666EB;
+  background-color: rgb(181 20 110);
   color: #ffffff;
   border-radius: 5px;
   border: none;
@@ -61,7 +61,7 @@
 }
 
 .submit-button:hover {
-  background-color: #0c64df;
+  background-color:rgb(163, 16, 100);
 }
 
 .btn {
@@ -95,7 +95,7 @@ button:hover {
 
 .form-a {
   text-decoration: none;
-  color: #0666EB;
+  color: rgb(181 20 110);;
 }
 
 .form-p {
