@@ -1,7 +1,7 @@
 :root{
     --heading:#191C1F;
     --para:#75808A;
-    --btn:#0666EB;
+    --btn:rgb(181 20 110);
     --btn-bg:#F2F1F1;
 }
 *{
