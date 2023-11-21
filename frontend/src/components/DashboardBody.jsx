@@ -1,6 +1,6 @@
 import link from "../Assets/link.png"
 export const DashboardBody = () => {
-    const name = "Sleepyhead";
+    const name = localStorage.getItem('Name');
     const date = new Date();
     return (
         <div className="DashboardBody-container">
