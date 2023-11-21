@@ -1,20 +1,25 @@
-:root{
-    --heading:#191C1F;
-    --para:#75808A;
-    --btn:rgb(181 20 110);
-    --btn-bg:#F2F1F1;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --heading: #191C1F;
+    --para: #75808A;
+    --btn: rgb(181 20 110);
+    --btn-bg: #F2F1F1;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-.bold{
-    font-weight:bold;
+
+.bold {
+    font-weight: bold;
 }
- /* Navigation */
+
+/* Navigation */
 
 
-.nav-container{
+.nav-container {
     display: flex;
     flex-direction: column;
     width: 25vw;
@@ -23,7 +28,8 @@
     border-radius: 10px;
     padding-left: 20px;
 }
-.nav-button{
+
+.nav-button {
     margin: 10px 0;
     padding: 15px 10px;
     font-size: 1rem;
@@ -32,17 +38,19 @@
     text-align: left;
 }
 
-.icon{
+.icon {
     height: 30px;
-    transform: translate(0,2px);
+    transform: translate(0, 2px);
     margin-right: 10px;
     translate: 0 7px;
     background: none;
 }
-.icon-c{
+
+.icon-c {
     height: 20px;
 }
-.icon-l{
+
+.icon-l {
     height: 25px;
     translate: 0 4px;
     margin-right: 15px;
@@ -51,14 +59,14 @@
 
 /* Dashboard  */
 
-.Dashborad-container{
+.Dashborad-container {
     display: flex;
     column-gap: 80px;
     width: 60vw;
     margin: auto;
 }
 
-.DashboardBody-container{
+.DashboardBody-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,41 +74,59 @@
     margin-top: 5vw;
     width: 100%;
 }
-.body-header{
-    background-image:url(https://olive-content.axisbank.com/card_face/521.png);
-    background-size: 100% 100%; 
+
+.body-header {
+    background-image: url(https://olive-content.axisbank.com/card_face/521.png);
+    background-size: 100% 100%;
     width: 100%;
     height: auto;
     border-radius: 10px;
     padding: 0 20px;
     color: white;
     padding-bottom: 20px;
-    box-shadow: 2px 2px 2px 2px gray;
+    box-shadow: 2px 2px 9px 2px gray;
 }
-.card-heading{
+
+.card-heading {
     padding-top: 60px;
     font-size: 1.5rem;
+    font-family: sans-serif;
 }
-.card-about{
+
+.card-about {
     padding-top: 10px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-family: sans-serif;
 }
-.card-validity{
+
+.card-validity {
     padding-top: 5px;
-    font-size: .9rem;
+    font-size: .8rem;
+    font-family: sans-serif;
 }
-.card-name{
+
+.card-validity-date {
+    font-weight: bold;
+    letter-spacing: 2.2px;
+}
+
+.card-name {
 
     padding-top: 30px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-family: sans-serif;
 }
-.card-number{
+
+.card-number {
     margin-top: 10px;
     padding-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2.2px;
 }
 
 
-.current-statement{
+.current-statement {
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -108,51 +134,59 @@
     padding: 0px 20px;
     margin-bottom: 20px;
     background-color: var(--btn-bg);
-    
+
 }
-.current-statement-heading{
-    display:flex;
+
+.current-statement-heading {
+    display: flex;
     justify-content: space-between;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
 }
-.current-statement-heading button{
+
+.current-statement-heading button {
     background: none;
     border: none;
     font-size: 1.5rem;
-    transform: translate(0,-10px);
-    
+    transform: translate(0, -10px);
+
 }
-.sub-current-statement-heading{
+
+.sub-current-statement-heading {
     display: flex;
 }
-.icn{
-    transform: translate(0,10px);
+
+.icn {
+    transform: translate(0, 10px);
 }
-.current-statement-body{
+
+.current-statement-body {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    margin-bottom: 20px;
-    
+    margin-bottom: 35px;
+
 }
-.current-statement-body-p{
+
+.current-statement-body-p {
     padding-bottom: 20px;
     color: var(--para);
 }
-.success{
-    background-color:rgb(181 20 110);
+
+.success {
+    background-color: rgb(181 20 110);
     border-radius: 8px;
-    padding: 10px 30px;
+    padding: 14px 30px;
     color: white;
 }
 
-.failed{
-    background-color:rgb(255, 0, 0);
+.failed {
+    background-color: rgb(255, 0, 0);
     border-radius: 8px;
     padding: 10px 30px;
 }
-.body-footer{
+
+.body-footer {
     color: var(--para);
 }
 
@@ -160,14 +194,14 @@
 /* Transaction */
 
 
-.Transaction-container{
+.Transaction-container {
     display: flex;
     column-gap: 80px;
     width: 60vw;
     margin: auto;
 }
 
-.TransactionBody-container{
+.TransactionBody-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,7 +210,7 @@
     width: 100%;
 }
 
-.transaction-history{
+.transaction-history {
     margin-top: 20px;
     background-color: var(--btn-bg);
     width: 100%;
@@ -184,11 +218,13 @@
     border-radius: 10px;
     padding: 0 20px;
 }
-.transaction-history-heading{
+
+.transaction-history-heading {
     padding-top: 20px;
     padding-bottom: 10px;
 }
-.transaction-done{
+
+.transaction-done {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
@@ -199,14 +235,14 @@
 
 /* Control Center  */
 
-.ControlCenter-container{
-    display:flex;
+.ControlCenter-container {
+    display: flex;
     column-gap: 80px;
     width: 60vw;
     margin: auto;
 }
 
-.ControlCenterBody-container{
+.ControlCenterBody-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,12 +251,13 @@
     width: 100%;
 }
 
-.ControlCenterBody-features{
+.ControlCenterBody-features {
     display: flex;
     width: 100%;
     margin-top: 20px;
 }
-.ControlCenterBody-features-card{
+
+.ControlCenterBody-features-card {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -229,38 +266,44 @@
     border-radius: 10px;
     color: var(--para);
 }
-.ControlCenterBody-features-card-l{
-    transform: translate(-20px,0);
+
+.ControlCenterBody-features-card-l {
+    transform: translate(-20px, 0);
 }
-.ControlCenterBody-features-card-r{
-    transform: translate(20px,0);
+
+.ControlCenterBody-features-card-r {
+    transform: translate(20px, 0);
 }
-.ControlCenterBody-features-card div{
+
+.ControlCenterBody-features-card div {
     display: flex;
     justify-content: space-between;
 
 }
-.ControlCenterBody-features-card button{
+
+.ControlCenterBody-features-card button {
     background: none;
     border: none;
     font-size: 1.5rem;
-    transform: translate(0,-5px);
+    transform: translate(0, -5px);
 }
-.ControlCenterBody-features-card p{
+
+.ControlCenterBody-features-card p {
     padding-top: 20px;
 }
 
 /* btn  */
-.switch{
+.switch {
     position: relative;
     display: inline-block;
     width: 2.2rem;
     height: 1.2rem;
-    background-color:var(--para);
+    background-color: var(--para);
     border-radius: 1.2rem;
     transition: all .4s linear;
-  }
-  .switch::after{
+}
+
+.switch::after {
     content: "";
     position: absolute;
     top: .15rem;
@@ -270,13 +313,28 @@
     border-radius: 50%;
     background-color: #fff;
     transition: all .4s linear;
-  }
-  #toggle:checked + .switch:after{
-    transform: translate(1rem,0);
-  }
-  #toggle:checked + .switch{
+}
+
+#toggle:checked+.switch:after {
+    transform: translate(1rem, 0);
+}
+
+#toggle:checked+.switch {
     background-color: var(--btn);
-  }
-  #toggle{
+}
+
+#toggle {
     display: none;
-  }
+}
+
+.udeBillStatus {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #a8a8a8;
+}
+
+.gapper {
+    font-family: sans-serif;
+    line-height: 30px;
+}
