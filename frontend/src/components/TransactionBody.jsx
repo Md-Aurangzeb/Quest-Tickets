@@ -15,6 +15,9 @@ export const TransactionBody = () => {
             <div className="transaction-history">
                 <p className="transaction-history-heading">ALL Transactions </p>
                 <TransactionHistory transactionDate={6} transactionMonth={date.toLocaleString('default', { month: "short" })} transactionMethod={PaymentMethod} refNo={"8768768758758"} amount={878} />
+                <TransactionHistory transactionDate={6} transactionMonth={date.toLocaleString('default', { month: "short" })} transactionMethod={"Nico Park (3)"} refNo={"8768768758758"} amount={1078} />
+                <TransactionHistory transactionDate={6} transactionMonth={date.toLocaleString('default', { month: "short" })} transactionMethod={"Indian Museum (1)"} refNo={"8768768758758"} amount={60} />
+                <TransactionHistory transactionDate={6} transactionMonth={date.toLocaleString('default', { month: "short" })} transactionMethod={"Alipore Zoo(5)"} refNo={"8768768758758"} amount={1878} />
             </div>
         </div>
     )
