@@ -29,7 +29,7 @@ const checkUserInfo = () => {
                     return res.status(403).send("Invalid Pan.")
                 }
                 const findAdhar = await User.findOne({ adhar: adhar })
-                if (findAdhar != null || adhar.length != 16) {
+                if (findAdhar != null || adhar.length != 12) {
                     return res.status(403).send("Invalid Aadher.")
                 }
 
