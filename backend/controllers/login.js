@@ -92,11 +92,11 @@ const login = () => {
                 const getUser = await User.findOne({ email: email })
                 const id = { userId: getUser._id }
                 const jwtToken = jwt.sign(id, process.env.SECTRE_KEY)
-                userInfo = {
+                const userInfo = {
                     jwtToken: jwtToken,
                     userName: getUser.name
                 }
-                res.status(200).send(jwtToken)
+                res.status(200).send(userInfo)
 
 
             } catch (error) {
