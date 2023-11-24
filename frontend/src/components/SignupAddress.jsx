@@ -23,7 +23,7 @@ export const SignupAddress = () => {
     const funcValidation = (e) => {
         e.preventDefault();
 
-        if (adharNumber.toString().length !== 16) {
+        if (adharNumber.toString().length !== 12) {
             return toast.error("Enter a valid Aadher")
         }
 

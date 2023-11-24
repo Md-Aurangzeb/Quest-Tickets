@@ -34,7 +34,7 @@ export const ControlCenterBody = () => {
         <div className="ControlCenterBody-container">
             <div className="body-header">
                 <h2 className="card-heading">Control Center</h2>
-                <p className="card-number">1234 1234 1234 1234</p>
+                <p className="card-number">6453 1234 2578 9001</p>
                 <p className="card-validity">VALILD THRU</p>
                 <p className="card-validity">45/52</p>
                 <p className="card-about">Manage your card settings and usage</p>
