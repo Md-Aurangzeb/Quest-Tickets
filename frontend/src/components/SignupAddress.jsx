@@ -24,7 +24,7 @@ export const SignupAddress = () => {
         e.preventDefault();
 
         if (adharNumber.toString().length !== 12) {
-            return toast.error("Enter a valid Aadher")
+            return toast.error("Enter a valid Aadhar")
         }
 
         if (panNumber.toString().length !== 10) {
