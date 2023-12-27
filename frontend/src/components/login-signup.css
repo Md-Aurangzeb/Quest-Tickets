@@ -61,7 +61,7 @@
 }
 
 .submit-button:hover {
-  background-color:rgb(163, 16, 100);
+  background-color: rgb(163, 16, 100);
 }
 
 .btn {
@@ -95,7 +95,8 @@ button:hover {
 
 .form-a {
   text-decoration: none;
-  color: rgb(181 20 110);;
+  color: rgb(181 20 110);
+  ;
 }
 
 .form-p {
@@ -168,4 +169,11 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.showHidePass {
+  position: relative;
+  top: -51px;
+  right: -166px;
+  width: 28px;
 }

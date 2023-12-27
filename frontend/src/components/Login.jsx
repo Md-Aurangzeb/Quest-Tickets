@@ -10,10 +10,13 @@ import bgCoinImgBottom from "../Assets/login-signup-bg-bottom-coin.png"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
+import showPassImg from '../Assets/showPass.svg'
+import hidePassImg from '../Assets/hidePass.svg'
 
 
 export const Login = () => {
   const URL = process.env.REACT_APP_BACKEND_URL
+  const [showPass, setShowPass] = useState(true)
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,7 +50,8 @@ export const Login = () => {
         <form className="login-form">
           <h1 className="form-heading">Login to Quest Tickets</h1>
           <input onChange={(e) => { setEmail(e.target.value) }} className="from-input" type="email" placeholder="Email" value={email} />
-          <input onChange={(e) => { setPassword(e.target.value) }} className="from-input" type="password" placeholder="Password" value={password} />
+          <input onChange={(e) => { setPassword(e.target.value) }} className="from-input" type={showPass?"password":"text"} placeholder="Password" value={password} />
+          <img src={showPass ? hidePassImg : showPassImg} alt="howPass" onClick={() => setShowPass(!showPass)} className="showHidePass"/>
           <button className="submit-button" onClick={handleSubmit}>Sent OTP</button>
         </form>
         <div className="other-login-signup seprator">
