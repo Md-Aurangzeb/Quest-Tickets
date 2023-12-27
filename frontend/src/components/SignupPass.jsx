@@ -10,11 +10,15 @@ import bgCoinImgBottom from "../Assets/login-signup-bg-bottom-coin.png"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
+import showPassImg from '../Assets/showPass.svg'
+import hidePassImg from '../Assets/hidePass.svg'
+import infoImg from '../Assets/info.svg'
 
 
 
 export const SignupPass = () => {
   const URL = process.env.REACT_APP_BACKEND_URL
+  const [showPass, setShowPass] = useState(true)
   const navigate = useNavigate()
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -57,8 +61,15 @@ export const SignupPass = () => {
         <form className="login-form">
           <h1 className="form-heading">SignUp to Quest Tickets</h1>
           <p className="form-detail">Set Password</p>
-          <input onChange={(e) => { setPassword(e.target.value) }} className="from-input" type="password" placeholder="Password" value={password} />
-          <input onChange={(e) => { setConfirmPassword(e.target.value) }} className="from-input" type="password" placeholder="Confirm Password" value={confirmPassword} />
+          <input onChange={(e) => { setPassword(e.target.value) }} className="from-input m-0" type="password" placeholder="Password" value={password} />
+          <img src={infoImg} alt="Info" className="showHidePass top-35 infosvg" />
+          <span className='PasswordInfoBox'>
+            Make sure it's at least 8 characters and including a number and a lowercase letter and aslo a uppercase letter
+            <br />
+            <span className='bold'>e.g :- Abcd123$</span>
+          </span>
+          <input onChange={(e) => { setConfirmPassword(e.target.value) }} className="from-input m-0" type={showPass ? "password" : "text"} placeholder="Confirm Password" value={confirmPassword} />
+          <img src={showPass ? hidePassImg : showPassImg} alt="howPass" onClick={() => setShowPass(!showPass)} className="showHidePass top-35" />
           <button className="submit-button" onClick={funcCheckPass}>Next</button>
         </form>
         <div className="other-login-signup seprator">

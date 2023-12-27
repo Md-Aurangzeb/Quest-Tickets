@@ -173,7 +173,56 @@ input[type=number] {
 
 .showHidePass {
   position: relative;
-  top: -51px;
-  right: -166px;
-  width: 28px;
+  top: -49px;
+  right: -168px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.top-35 {
+  top: -35px;
+}
+
+.infosvg:hover+.PasswordInfoBox {
+  display: block;
+}
+
+.PasswordInfoBox {
+  position: absolute;
+  height: 118px;
+  width: 199px;
+  border: 2px solid #cbcac9;
+  border-radius: 13px;
+  font-size: 14px;
+  color: black;
+  background: #cbcac9;
+  padding: 0 5px;
+  right: 516px;
+  top: 230px;
+  z-index: 10;
+  display: none;
+  padding: 10px;
+}
+
+.PasswordInfoBox::after {
+  content: "";
+  height: 18px;
+  width: 19px;
+  background: #cbcac9;
+  position: absolute;
+  top: 50px;
+  right: 210px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.forgetPassInfoBtn {
+  position: absolute;
+  top: 18px;
+  right: 11px;
+  color: #848484;
 }
