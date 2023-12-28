@@ -3,6 +3,7 @@ import otpGenerator from 'otp-generator'
 import otpModel from '../models/otp.js'
 import { User } from "../models/signupModel.js";
 import bcrypt from "bcrypt";
+import cardModel from '../models/card.js'
 
 const otp = () => {
 
@@ -100,6 +101,8 @@ const otp = () => {
                     return res.status(403).send("Accesss Denied.")
                 }
 
+
+
                 const newUser = new User({
                     name: name,
                     phone: phone,
@@ -118,12 +121,41 @@ const otp = () => {
                     res.status(500).send("Unable to create User" + err);
                 });
 
-                await otpModel.deleteOne({email:email})
+
+                /*
+                -----------------------------------------------------
+                Createing Cards Fro user
+                ------------------------------------------------------
+                */
+
+
+                let CardNumber = otpGenerator.generate(16, {
+                    digits: true, lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false
+                })
+                let CardCVV = otpGenerator.generate(3, {
+                    digits: true, lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false
+                })
+
+                const cardData = new cardModel({
+                    userId: newUser._id,
+                    cardNumber: CardNumber,
+                    cardValidity: '12/28',
+                    cvv: CardCVV,
+                })
+
+                cardData.save().then(
+
+                ).catch((err) => {
+                    return res.status(500).send("Unable To create Card" + err)
+                })
+
+
+                await otpModel.deleteOne({ email: email })
 
             } catch (error) {
                 res.status(500).send("Internal server Error " + error)
             }
-        }
+        },
     }
 }
 
