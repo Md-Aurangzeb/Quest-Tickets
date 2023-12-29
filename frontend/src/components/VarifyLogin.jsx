@@ -23,7 +23,6 @@ export const VarifyLogin = () => {
       otp: OTP
     }
     axios.post(`${URL}/login/verify`, info).then((res) => {
-      localStorage.removeItem('email')
       localStorage.setItem('jwt',res.data.jwtToken)
       localStorage.setItem('Name',res.data.userName)
       window.location.reload()

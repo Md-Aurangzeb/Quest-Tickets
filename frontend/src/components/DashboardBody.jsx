@@ -1,16 +1,36 @@
+import { useEffect, useState } from "react";
 import link from "../Assets/link.png"
+import axios from 'axios'
+
 export const DashboardBody = () => {
+    const URL = process.env.REACT_APP_BACKEND_URL
     const name = localStorage.getItem('Name');
+    const [card, setCard] = useState()
     const date = new Date();
+    useEffect(() => {
+        axios.post(`${URL}/card/get`, { email: localStorage.getItem('email') }).then((response) => {
+            setCard(response.data)
+        }).catch(err => {
+            console.log(err)
+        })
+        // eslint-disable-next-line
+    }, [])
+
     return (
         <div className="DashboardBody-container">
             <div className="body-header">
-                <h2 className="card-heading">Hi, {name}</h2>
-                <p className="card-about">Your card account summary</p>
-                <p className="card-name">Ace Card</p>
-                <p className="card-number">6453 1234 2578 9001</p>
-                <p className="card-validity">VALILD UPTO</p>
-                <p className="card-validity card-validity-date">09/25</p>
+                <div>
+                    <h2 className="card-heading">Hi, {name}</h2>
+                    <p className="card-about">Your card account summary</p>
+                    <p className="card-name">Ace Card</p>
+                    <p className="card-number">{card ? card.cardNumber : "N/A"}</p>
+                    <p className="card-validity">VALILD UPTO</p>
+                    <p className="card-validity card-validity-date">{card ? card.cardValidity : "N/A"}</p>
+                </div>
+                <div className="card-cvv">
+                    <p>CVV</p>
+                    <p>{card ? card.cvv : "N/A"}</p>
+                </div>
             </div>
 
             <div className="current-statement">
@@ -20,23 +40,23 @@ export const DashboardBody = () => {
                             <img style={{ height: "23px", transform: "translate(0,-8px)" }} className="icon" src={link} alt="" /></div>
                         <div className="heading">
                             <p style={{ fontSize: "1rem", fontFamily: "Inter, sans-serif", fontWeight: "bold" }}>Current Statement</p>
-                            <p className="gapper">{date.getUTCMonth()} / {date.getFullYear()}</p>
+                            <p className="gapper">{date.getUTCMonth()+1} / {date.getFullYear()}</p>
                         </div>
                     </div>
                     <button>{">"}</button>
                 </div>
                 <div className="current-statement-body">
                     <div className="current-statement-sub-body">
-                        <p className="udeBillStatus">LAST BILLED DUE</p>
-                        <p className="gapper">₹{1234.45}</p>
+                        <p className="udeBillStatus">TOTAL AMOUNT</p>
+                        <p className="gapper">₹{card ? card.amount : "Loding..."}</p>
                     </div>
                     <div className="current-statement-sub-body">
-                        <p className="udeBillStatus">MINIMUM DUE</p>
-                        <p className="gapper">₹{1234.45}</p>
+                        <p className="udeBillStatus">LAST BILLED DUE</p>
+                        <p className="gapper">₹{0}</p>
                     </div>
                     <div className="current-statement-sub-body">
                         <p className="udeBillStatus">DUE ON</p>
-                        <p className="gapper">{date.getUTCMonth()} / {date.getFullYear()}</p>
+                        <p className="gapper">{date.getUTCMonth()+1} / {date.getFullYear()}</p>
                     </div>
                     <p className="success">Fully Paid</p>
                 </div>

@@ -1,16 +1,31 @@
+import axios from "axios";
 import { TransactionHistory } from "./TransactionHistory";
+import { useState, useEffect } from 'react'
 
 export const TransactionBody = () => {
+    const URL = process.env.REACT_APP_BACKEND_URL
+    const [card, setCard] = useState()
     const date = new Date();
     const PaymentMethod = "Eco Park Ticket (3)";
+
+    useEffect(() => {
+        axios.post(`${URL}/card/get`, { email: localStorage.getItem('email') }).then((response) => {
+            setCard(response.data)
+        }).catch(err => {
+            console.log(err)
+        })
+        // eslint-disable-next-line
+    }, [])
     return (
         <div className="TransactionBody-container">
             <div className="body-header">
-                <h2 className="card-heading">Recent Transactions</h2>
-                <p className="card-number">6453 1234 2578 9001</p>
-                <p className="card-validity">VALILD THRU</p>
-                <p className="card-validity">45/52</p>
-                <p className="card-about">view your recent transactions</p>
+                <div>
+                    <h2 className="card-heading">Recent Transactions</h2>
+                    <p className="card-number">{card ? card.cardNumber : "N/A"}</p>
+                    <p className="card-validity">VALILD THRU</p>
+                    <p className="card-validity">{card ? card.cardValidity : "N/A"}</p>
+                    <p className="card-about">view your recent transactions</p>
+                </div>
             </div>
             <div className="transaction-history">
                 <p className="transaction-history-heading">ALL Transactions </p>

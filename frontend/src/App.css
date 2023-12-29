@@ -85,6 +85,8 @@
     color: white;
     padding-bottom: 20px;
     box-shadow: 2px 2px 9px 2px gray;
+    display: flex;
+    align-items: center;
 }
 
 .card-heading {
@@ -337,4 +339,10 @@
 .gapper {
     font-family: sans-serif;
     line-height: 30px;
+}
+
+.card-cvv{
+    position: relative;
+    top: 120px;
+    right: -110px;
 }
