@@ -3,6 +3,7 @@ import dashboard from "../Assets/dashBord.png"
 import transaction from "../Assets/transaction.png"
 import controlcenter from "../Assets/controllCenter.png"
 import logout from "../Assets/logout.png"
+import reChargeImg from '../Assets/recharge.png'
 export const Nav = () => {
     const handleLoguot=(e)=>{
         e.preventDefault()
@@ -15,6 +16,9 @@ export const Nav = () => {
         </Link>
         <Link to="/transaction">
             <button className="nav-button"><img className="icon" src={transaction} alt=''></img> Transaction</button>
+        </Link>
+        <Link to="/recharge">
+            <button className="nav-button"><img className="icon icon-l" src={reChargeImg} alt=''></img> Recharge</button>
         </Link>
         <Link to="/controlcenter">
             <button className="nav-button"><img className="icon" src={controlcenter} alt=''></img> Control Center</button></Link>

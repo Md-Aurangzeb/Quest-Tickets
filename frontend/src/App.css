@@ -341,8 +341,43 @@
     line-height: 30px;
 }
 
-.card-cvv{
+.card-cvv {
     position: relative;
     top: 120px;
     right: -110px;
+}
+
+/*
+-------------------------------------------
+        Recharge Section
+-------------------------------------------
+*/
+
+.transaction-history .inputCont {
+    height: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transaction-history .inputCont input {
+    padding: 20px 0 20px 10px;
+    margin-bottom: 100px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #F2F1F1;
+}
+
+.transaction-history .inputCont button {
+    padding: 15px;
+    margin-bottom: 100px;
+    background-color: rgb(181 20 110);
+    color: #FFF;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
 }

@@ -9,6 +9,7 @@ import { SignupPass } from "./SignupPass";
 import { Dashboard } from "./Dashboard";
 import { Transaction } from "./Transaction";
 import { ControlCenter } from "./ControlCenter";
+import Recharge from './Recharge';
 function App() {
   return (
     <div>
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={localStorage.getItem('jwt') ? <Dashboard /> : <Navigate to={'/login'} />} />
           <Route path='/transaction' element={localStorage.getItem('jwt') ? <Transaction /> : <Navigate to={'/login'} />} />
+          <Route path='/recharge' element={localStorage.getItem('jwt') ? <Recharge /> : <Navigate to={'/login'} />} />
           <Route path='/controlcenter' element={localStorage.getItem('jwt') ? <ControlCenter /> : <Navigate to={'/login'} />} />
           <Route path='/login' element={localStorage.getItem('jwt') ? <Navigate to={'/'} /> : <Login />} />
           <Route path='/varifylogin' element={localStorage.getItem('jwt') ? <Navigate to={'/'} /> : <VarifyLogin />} />
