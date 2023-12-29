@@ -29,5 +29,5 @@ web(app)
 
 //Server Lintening
 app.listen(process.env.PORT, () => {
-    console.log(`server is live at http://localhost:${process.env.PORT}`);
+    console.log(`server is live at PORT:${process.env.PORT}`);
 })
