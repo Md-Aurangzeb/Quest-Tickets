@@ -13,6 +13,7 @@ const web = (app) => {
     app.post('/login/verify', login().verifyLogin)
     app.post('/card/get', card().GetCardNumber)
     app.post('/card/recharge', card().rechargeCard)
+    app.post('/card/control',card().cardControl)
 }
 
 export default web
