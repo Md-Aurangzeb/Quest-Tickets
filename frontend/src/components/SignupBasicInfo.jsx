@@ -61,7 +61,7 @@ export const SignupBasicInfo = () => {
             <ToastContainer />
             <div className="login-signup-left">
                 <form className="login-form">
-                    <h1 className="form-heading">SignUp to Quest Tickets</h1>
+                    <h1 className="form-heading">SignUp to Quest Card</h1>
                     <p className="form-detail">Basic information</p>
                     <input onChange={e => setName(e.target.value)} className="from-input" type="text" placeholder="Name" value={name} />
                     <input onChange={e => setPhoneNumber(e.target.value)} className="from-input" type="number" placeholder="Phone Number" value={phoneNumber} />

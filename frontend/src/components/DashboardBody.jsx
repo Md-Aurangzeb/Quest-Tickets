@@ -23,13 +23,13 @@ export const DashboardBody = () => {
                     <h2 className="card-heading">Hi, {name}</h2>
                     <p className="card-about">Your card account summary</p>
                     <p className="card-name">Ace Card</p>
-                    <p className="card-number">{card ? card.cardNumber : "N/A"}</p>
+                    <p className="card-number">{card ? card.cardNumber : "Loading..."}</p>
                     <p className="card-validity">VALILD UPTO</p>
-                    <p className="card-validity card-validity-date">{card ? card.cardValidity : "N/A"}</p>
+                    <p className="card-validity card-validity-date">{card ? card.cardValidity : "Loading..."}</p>
                 </div>
                 <div className="card-cvv">
                     <p>CVV</p>
-                    <p>{card ? card.cvv : "N/A"}</p>
+                    <p>{card ? card.cvv : "Loading..."}</p>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@ export const DashboardBody = () => {
                     </div>
                     <p className="success">Fully Paid</p>
                 </div>
-                <p className="current-statement-body-p">Your card has been paid in full your next bill will be generated on {date.getUTCMonth()} {date.getFullYear()}</p>
+                <p className="current-statement-body-p">Your card has been paid in full your next bill will be generated on {date.getUTCMonth()+1} {date.getFullYear()}</p>
             </div>
             <div className="body-footer">
                 <p>That's all for now! keep visiting this space for some exciting updates</p>

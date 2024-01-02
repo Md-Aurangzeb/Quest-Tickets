@@ -48,7 +48,7 @@ export const Login = () => {
       <ToastContainer />
       <div className="login-signup-left">
         <form className="login-form">
-          <h1 className="form-heading">Login to Quest Tickets</h1>
+          <h1 className="form-heading">Login to Quest Card</h1>
           <input onChange={(e) => { setEmail(e.target.value) }} className="from-input" type="email" placeholder="Email" value={email} />
           <input onChange={(e) => { setPassword(e.target.value) }} className="from-input" type={showPass?"password":"text"} placeholder="Password" value={password} />
           <img src={showPass ? hidePassImg : showPassImg} alt="howPass" onClick={() => setShowPass(!showPass)} className="showHidePass"/>

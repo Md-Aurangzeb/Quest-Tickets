@@ -46,10 +46,10 @@ const Recharge = () => {
                 <div className='TransactionBody-container'>
                     <div className="body-header">
                         <div>
-                            <h2 className="card-heading">Control Center</h2>
-                            <p className="card-number">{card ? card.cardNumber : "N/A"}</p>
+                            <h2 className="card-heading">Recharge Your Card</h2>
+                            <p className="card-number">{card ? "XXXXXXXXXXXXX"+String(card.cardNumber).substr(-4) : "Loading..."}</p>
                             <p className="card-validity">VALILD THRU</p>
-                            <p className="card-validity">{card ? card.cardValidity : "N/A"}</p>
+                            <p className="card-validity">{card ? card.cardValidity : "Loading..."}</p>
                             <p className="card-about">You Can Recharge your Card</p>
                         </div>
                     </div>
