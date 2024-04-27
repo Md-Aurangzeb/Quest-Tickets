@@ -123,6 +123,30 @@ const machine = () => {
                     })
                 }
 
+                if (cardinfo.domesticUse === false) {
+                    return res.status(400).send({
+                        message: "Domestic Use Is turned off",
+                        status: "bad request",
+                        code: 400
+                    })
+                }
+
+                if (cardinfo.block === true) {
+                    return res.status(400).send({
+                        message: "Card is blocked",
+                        status: "bad request",
+                        code: 400
+                    })
+                }
+
+                if (cardinfo.autoDebitUse === false) {
+                    return res.status(400).send({
+                        message: "tap to pay is terend Off",
+                        status: "bad request",
+                        code: 400
+                    })
+                }
+
 
                 if (cardinfo.amount < process.env.ticket_cost) {
                     return res.status(400).send({
@@ -147,7 +171,7 @@ const machine = () => {
                     status: "Ok",
                     code: 200
                 })
-                
+
             } catch (error) {
                 return res.status(500).send({
                     message: "" + error,
