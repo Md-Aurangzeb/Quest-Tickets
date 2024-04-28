@@ -2,6 +2,9 @@ import machineInfoModel from '../models/machineInfo.js'
 import cardModel from '../models/card.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import nodemailer from "nodemailer";
+import { User } from '../models/signupModel.js';
+import alert from '../Templates/alert.js';
 
 const machine = () => {
     return {
@@ -165,6 +168,47 @@ const machine = () => {
                         }
                     }
                 )
+
+                const getLatestCardInfo = await cardModel.findOne({ cardNumber: cardno })
+
+                /*
+                ==============================
+                    Get User Details 
+                ==============================
+                 */
+
+                const findUser = await User.findOne({ _id: cardinfo.userId })
+
+
+                /*
+                =====================================
+                    Send Alert to User via Email
+                ======================================
+                */
+
+
+                const transpoter = nodemailer.createTransport({
+                    service: "gmail",
+                    auth: {
+                        user: process.env.SMTP_MAIL,
+                        pass: process.env.SMTP_PASSWORD
+                    }
+                })
+                const mailOption = ({
+                    from: `Quest Card ${process.env.SMTP_MAIL}`,
+                    to: findUser.email,
+                    subject: `Transaction alert on Quest Card Card no. XXX${cardinfo.cardNumber.substring(cardinfo.cardNumber.length - 4)}`,
+                    html: alert(findUser.name, cardinfo.cardNumber.substring(cardinfo.cardNumber.length - 4), process.env.ticket_cost,getLatestCardInfo.amount)
+                })
+
+                transpoter.sendMail(mailOption, (err, info) => {
+                    if (err) {
+                        console.log(err)
+                    }
+                    else {
+                        res.status(200).send("mail sent successfully.")
+                    }
+                })
 
                 res.status(200).send({
                     message: "amount deducted Successfully",
