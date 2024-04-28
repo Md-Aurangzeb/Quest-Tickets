@@ -4,6 +4,7 @@ import otpModel from '../models/otp.js'
 import { User } from "../models/signupModel.js";
 import bcrypt from "bcrypt";
 import cardModel from '../models/card.js'
+import otpTemp from "../Templates/otp.js";
 
 const otp = () => {
 
@@ -47,12 +48,10 @@ const otp = () => {
                     }
                 })
                 const mailOption = ({
-                    from: process.env.SMTP_MAIL,
+                    from: `Quest Card ${process.env.SMTP_MAIL}`,
                     to: email,
                     subject: "OTP For Registration",
-                    html: `
-                <p>Your OTP is <strong>${OTP}</strong></p>
-            `
+                    html: otpTemp(OTP, "Registration")
                 })
 
                 transpoter.sendMail(mailOption, (err, info) => {

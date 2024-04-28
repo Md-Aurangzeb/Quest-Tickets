@@ -4,6 +4,7 @@ import nodemailer from "nodemailer";
 import jwt from 'jsonwebtoken'
 import otpGenerator from 'otp-generator'
 import otpModel from '../models/otp.js'
+import otpTemp from '../Templates/otp.js';
 
 const login = () => {
     const requestOtp = async (email) => {
@@ -55,12 +56,10 @@ const login = () => {
                     }
                 })
                 const mailOption = ({
-                    from: process.env.SMTP_MAIL,
+                    from: `Quest Card ${process.env.SMTP_MAIL}`,
                     to: email,
                     subject: "OTP For Login",
-                    html: `
-                <p>Your OTP is <strong>${OTP}</strong></p>
-            `
+                    html: otpTemp(OTP, "Login")
                 })
 
                 transpoter.sendMail(mailOption, (err, info) => {
