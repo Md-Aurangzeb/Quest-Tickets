@@ -33,7 +33,9 @@ const alert = (name, card, deducAmount, totalAmount) => {
         }
     
         .transaction-details {
-            padding: 20px;
+            padding: 20px 20px 15px 20px;
+            border:1px solid black;
+            border-top:none;
         }
     
         .transaction-details p {
@@ -43,9 +45,9 @@ const alert = (name, card, deducAmount, totalAmount) => {
     
         .footer {
             text-align: left; /* Align to the left */
-            margin-top: 20px;
+            margin-top: 30px;
             color: #6c757d;
-            margin-left:24px;
+            
         }
         </style>
     </head>
@@ -59,13 +61,13 @@ const alert = (name, card, deducAmount, totalAmount) => {
             <p>Thank you for using your Card no. XX${card} for <b>INR ${deducAmount} at Machine_id_2001 on ${currentDate}</b> , while the <b>available amount is INR ${totalAmount}.</b></p>
             <p>If this transaction is not done by you block your Card and for Technical Support contact <a href="mailto:dev@mizanur.in">dev@mizanur.in</a></p>
             <p>Always open to help you.</p>
-        </div>
-        <div class="footer">
+            <div class="footer">
             <p>Regards,<br>Quest Card</p>
         </div>
         </div>
+        </div>
     </body>
-    </html>  
+    </html>   
   `
 }
 
