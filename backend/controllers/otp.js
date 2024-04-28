@@ -129,7 +129,7 @@ const otp = () => {
                 */
 
 
-                let CardNumber = otpGenerator.generate(16, {
+                let CardNumber = otpGenerator.generate(14, {
                     digits: true, lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false
                 })
                 let CardCVV = otpGenerator.generate(3, {
