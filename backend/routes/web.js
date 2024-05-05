@@ -3,6 +3,7 @@ import checkUserInfo from "../controllers/checkUserInfo.js"
 import login from "../controllers/login.js"
 import otp from "../controllers/otp.js"
 import machine from "../controllers/machine.js"
+import razorpay from "../controllers/razorpay.js"
 
 const web = (app) => {
     app.post('/checkbasicInfo', checkUserInfo().ckeckBasicInfo)
@@ -20,6 +21,10 @@ const web = (app) => {
     app.post('/api/v1/machine/login', machine().login)
     app.post('/api/v1/machine/signup', machine().signUp)
     app.get('/api/v1/userinfo', machine().deductMoneyFromUser)
+
+    /**********************Payment Getway****************** */
+    app.post('/api/v1/payment/initiate', razorpay().order)
+    app.post('/api/v1/payment/validate', razorpay().validate)
 }
 
 export default web
