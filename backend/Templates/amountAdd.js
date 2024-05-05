@@ -57,7 +57,7 @@ const amountAdd = (name, card, addedAmount, totalAmount) => {
             </div>
             <div class="transaction-details">
                 <p>Dear <b>${name}</b>,</p>
-                <p>Thank you for adding <b>INR ${addedAmount}</b> to your account using Card no. XX${card} on ${currentDate}, your new balance is <b>INR ${totalAmount}</b>.</p>
+                <p>Thank you for adding <b>INR ${addedAmount}</b> to your account on Card no. XX${card} on ${currentDate}, your new balance is <b>INR ${totalAmount}</b>.</p>
                 <p>If you have any questions or concerns, please feel free to contact us at <a href="mailto:dev@mizanur.in">dev@mizanur.in</a>.</p>
                 <p>Always open to help you.</p>
                 <div class="footer">
