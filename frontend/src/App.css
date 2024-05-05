@@ -387,3 +387,32 @@
     border-radius: 8px;
     margin-left: 10px;
 }
+
+
+/*=================================
+    basic snippet 
+=====================================*/
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pb-30{
+    padding-bottom: 30px;
+}
+
+.mb-10{
+    margin-bottom: 10px;
+}
+
+.bold{
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+
+.h-115{
+    height: 115px;
+}
