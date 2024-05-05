@@ -181,6 +181,20 @@ const machine = () => {
 
 
                 /*
+                =================================
+                    Save Transaction History 
+                =================================
+                */
+
+                await cardModel.updateOne({ cardNumber: cardno },
+                    {
+                        $set: {
+                            cardUse: getLatestCardInfo.cardUse + 1
+                        }
+                    }
+                )
+
+                /*
                 =====================================
                     Send Alert to User via Email
                 ======================================
@@ -198,7 +212,7 @@ const machine = () => {
                     from: `Quest Card ${process.env.SMTP_MAIL}`,
                     to: findUser.email,
                     subject: `Transaction alert on Quest Card Card no. XXX${cardinfo.cardNumber.substring(cardinfo.cardNumber.length - 4)}`,
-                    html: alert(findUser.name, cardinfo.cardNumber.substring(cardinfo.cardNumber.length - 4), process.env.ticket_cost,getLatestCardInfo.amount)
+                    html: alert(findUser.name, cardinfo.cardNumber.substring(cardinfo.cardNumber.length - 4), process.env.ticket_cost, getLatestCardInfo.amount)
                 })
 
                 transpoter.sendMail(mailOption, (err, info) => {

@@ -4,6 +4,7 @@ import login from "../controllers/login.js"
 import otp from "../controllers/otp.js"
 import machine from "../controllers/machine.js"
 import razorpay from "../controllers/razorpay.js"
+import transaction from "../controllers/transaction.js"
 
 const web = (app) => {
     app.post('/checkbasicInfo', checkUserInfo().ckeckBasicInfo)
@@ -16,6 +17,7 @@ const web = (app) => {
     app.post('/card/get', card().GetCardNumber)
     app.post('/card/recharge', card().rechargeCard)
     app.post('/card/control', card().cardControl)
+    app.post('/api/v1/transaction/history', transaction().history)
 
     /* *******************Machime Route******************** */
     app.post('/api/v1/machine/login', machine().login)
