@@ -39,7 +39,7 @@ const Recharge = () => {
             return;
         }
 
-        const response = await axios.post("https://projectbackend.mizanur.in/api/v1/payment/initiate", {
+        const response = await axios.post(`${URL}/api/v1/payment/initiate`, {
             amount: amount * 100,
             currency,
             receipt: receiptId,
@@ -60,7 +60,7 @@ const Recharge = () => {
                     ...response,
                 };
 
-                const validateRes = await axios.post("https://projectbackend.mizanur.in/api/v1/payment/validate", body);
+                const validateRes = await axios.post(`${URL}/api/v1/payment/validate`, body);
 
                 const jsonRes = validateRes.data;
 
