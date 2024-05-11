@@ -47,7 +47,7 @@ export const TransactionBody = () => {
                     cardUse === 0 ?
                         <div className="flex pb-30">
                             <img className="h-115 mb-10" src={transaction_not_found_img} alt="transaction_not_found_img" />
-                            <p className="bold">Transaction not Found</p>
+                            <p className="bold">You have not done any transactions</p>
                         </div> : ""
                 }
                 {cardUse === undefined ?

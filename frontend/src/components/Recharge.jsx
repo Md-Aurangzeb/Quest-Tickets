@@ -10,6 +10,7 @@ const Recharge = () => {
     const URL = process.env.REACT_APP_BACKEND_URL
     const [card, setCard] = useState()
     const [amount, setAmount] = useState()
+    const [loading,setLoading] = useState(false)
     useEffect(() => {
         axios.post(`${URL}/card/get`, { email: localStorage.getItem('email') }).then((response) => {
             setCard(response.data)
@@ -38,6 +39,7 @@ const Recharge = () => {
             toast.error("Enter Valid Amount")
             return;
         }
+        setLoading(true)
 
         const response = await axios.post(`${URL}/api/v1/payment/initiate`, {
             amount: amount * 100,
@@ -66,6 +68,7 @@ const Recharge = () => {
 
                 if (jsonRes.msg === 'success') {
                     funcRecharge()
+                    setLoading(false)
                 }
             },
             prefill: {
@@ -84,6 +87,7 @@ const Recharge = () => {
 
         rzp1.on("payment.failed", function (response) {
             toast.error("Payment fail try again :(")
+            setLoading(false)
         });
         rzp1.open();
         e.preventDefault();
@@ -110,7 +114,7 @@ const Recharge = () => {
                         <div className="inputCont">
                             <span>₹</span>
                             <input type="number" autoComplete="off" placeholder='Enter Amount' name='amount' onChange={(e) => { setAmount(e.target.value) }} value={amount} />
-                            <button onClick={paymentHandler}>Recharge</button>
+                            <button onClick={paymentHandler}>{loading?'Loading...':'Recharge'}</button>
                         </div>
                     </div>
                 </div>
