@@ -13,6 +13,7 @@
 
 #define SS_PIN D8
 #define RST_PIN D3
+#define BUZZER_PIN D1 
 Servo servo;
 /* Create an instance of MFRC522 */
 MFRC522 mfrc522(SS_PIN, RST_PIN);
@@ -36,8 +37,8 @@ WiFiClient client;
 bool loginStatus = false;
 String token;
 // wifi connection details
-String ssid = "POCO X6 Pro 5G";
-String password = "con(12345678)";
+String ssid = "Redmi Note 4";
+String password = "@123456&";
 void setup() {
   /* Initialize serial communications with the PC */
   Serial.begin(115200);
@@ -83,6 +84,8 @@ void setup() {
     }
   }
   http.end();
+  pinMode(BUZZER_PIN, OUTPUT);         
+  digitalWrite(BUZZER_PIN, LOW);       
 }
 
 
@@ -164,12 +167,16 @@ void loop() {
       servo.write(180);
     } else {
       Serial.println("[-] Check Card");
+      digitalWrite(BUZZER_PIN, HIGH); 
+      delay(1000);                     
+      digitalWrite(BUZZER_PIN, LOW);   
     }
 
     Serial.println("Concatenated data: " + output);
   }
   delay(5000);
   servo.write(0);
+  ESP.restart();
 }
 
 
