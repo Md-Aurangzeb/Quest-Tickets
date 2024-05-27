@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import link from "../Assets/link.png"
-import axios from 'axios'
 
-export const DashboardBody = () => {
-    const URL = process.env.REACT_APP_BACKEND_URL
+export const DashboardBody = ({card}) => {
     const name = localStorage.getItem('Name');
-    const [card, setCard] = useState()
     const date = new Date();
-    useEffect(() => {
-        axios.post(`${URL}/card/get`, { email: localStorage.getItem('email') }).then((response) => {
-            setCard(response.data)
-        }).catch(err => {
-            console.log(err)
-        })
-        // eslint-disable-next-line
-    }, [])
 
     return (
         <div className="DashboardBody-container">

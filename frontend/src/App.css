@@ -393,26 +393,45 @@
     basic snippet 
 =====================================*/
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.pb-30{
+.pb-30 {
     padding-bottom: 30px;
 }
 
-.mb-10{
+.mb-10 {
     margin-bottom: 10px;
 }
 
-.bold{
+.bold {
     font-weight: bold;
     font-family: 'Roboto';
 }
 
-.h-115{
+.h-115 {
     height: 115px;
+}
+
+.spinner {
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid rgb(181, 20, 110);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

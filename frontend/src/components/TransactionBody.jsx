@@ -3,21 +3,10 @@ import { TransactionHistory } from "./TransactionHistory";
 import { useState, useEffect } from 'react'
 import transaction_not_found_img from '../Assets/transaction_not_found.svg'
 
-export const TransactionBody = () => {
+export const TransactionBody = ({ card }) => {
     const URL = process.env.REACT_APP_BACKEND_URL
-    const [card, setCard] = useState()
     const [cardUse, setcardUse] = useState()
     const PaymentMethod = "Machine_id_2001";
-
-    useEffect(() => {
-        axios.post(`${URL}/card/get`, { email: localStorage.getItem('email') }).then((response) => {
-            setCard(response.data)
-        }).catch(err => {
-            console.log(err)
-        })
-
-        // eslint-disable-next-line
-    }, [])
 
 
     useEffect(() => {
@@ -52,7 +41,7 @@ export const TransactionBody = () => {
                 }
                 {cardUse === undefined ?
                     <div className="flex pb-30">
-                        <p className="bold">Loading...</p>
+                       <div className="spinner"></div>
                     </div>
                     : Array.from({ length: cardUse }).map((_, index) => (
                         <TransactionHistory

@@ -1,24 +1,16 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Nav } from './Nav';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Recharge = () => {
+const Recharge = ({ card }) => {
     const currency = "INR";
     const receiptId = "qwsaq1";
     const URL = process.env.REACT_APP_BACKEND_URL
-    const [card, setCard] = useState()
     const [amount, setAmount] = useState()
-    const [loading,setLoading] = useState(false)
-    useEffect(() => {
-        axios.post(`${URL}/card/get`, { email: localStorage.getItem('email') }).then((response) => {
-            setCard(response.data)
-        }).catch(err => {
-            console.log(err)
-        })
-        // eslint-disable-next-line
-    }, [])
+    const [loading, setLoading] = useState(false)
+
 
     const funcRecharge = () => {
         axios.post(`${URL}/card/recharge`, {
@@ -35,7 +27,7 @@ const Recharge = () => {
 
 
     const paymentHandler = async (e) => {
-        if (amount <= 0 || amount=== undefined) {
+        if (amount <= 0 || amount === undefined) {
             toast.error("Enter Valid Amount")
             return;
         }
@@ -114,7 +106,7 @@ const Recharge = () => {
                         <div className="inputCont">
                             <span>₹</span>
                             <input type="number" autoComplete="off" placeholder='Enter Amount' name='amount' onChange={(e) => { setAmount(e.target.value) }} value={amount} />
-                            <button onClick={paymentHandler}>{loading?'Loading...':'Recharge'}</button>
+                            <button onClick={paymentHandler}>{loading ? 'Loading...' : 'Recharge'}</button>
                         </div>
                     </div>
                 </div>
