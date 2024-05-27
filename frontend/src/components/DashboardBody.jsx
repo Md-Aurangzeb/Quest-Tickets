@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import link from "../Assets/link.png"
+import axios from "axios";
 
-export const DashboardBody = ({card}) => {
+export const DashboardBody = () => {
+    const URL = process.env.REACT_APP_BACKEND_URL
+    const [card, setCard] = useState()
+
+    useEffect(() => {
+        axios.post(`${URL}/card/get`, { email: localStorage.getItem('email') }).then((response) => {
+            setCard(response.data)
+        }).catch(err => {
+            console.log(err)
+        })
+
+        // eslint-disable-next-line
+    }, [])
     const name = localStorage.getItem('Name');
     const date = new Date();
 
@@ -29,7 +42,7 @@ export const DashboardBody = ({card}) => {
                             <img style={{ height: "23px", transform: "translate(0,-8px)" }} className="icon" src={link} alt="" /></div>
                         <div className="heading">
                             <p style={{ fontSize: "1rem", fontFamily: "Inter, sans-serif", fontWeight: "bold" }}>Current Statement</p>
-                            <p className="gapper">{date.getUTCMonth()+1} / {date.getFullYear()}</p>
+                            <p className="gapper">{date.getUTCMonth() + 1} / {date.getFullYear()}</p>
                         </div>
                     </div>
                     <button>{">"}</button>
@@ -45,11 +58,11 @@ export const DashboardBody = ({card}) => {
                     </div>
                     <div className="current-statement-sub-body">
                         <p className="udeBillStatus">DUE ON</p>
-                        <p className="gapper">{date.getUTCMonth()+1} / {date.getFullYear()}</p>
+                        <p className="gapper">{date.getUTCMonth() + 1} / {date.getFullYear()}</p>
                     </div>
                     <p className="success">Fully Paid</p>
                 </div>
-                <p className="current-statement-body-p">Your card has been paid in full your next bill will be generated on {date.getUTCMonth()+1} {date.getFullYear()}</p>
+                <p className="current-statement-body-p">Your card has been paid in full your next bill will be generated on {date.getUTCMonth() + 1} {date.getFullYear()}</p>
             </div>
             <div className="body-footer">
                 <p>That's all for now! keep visiting this space for some exciting updates</p>

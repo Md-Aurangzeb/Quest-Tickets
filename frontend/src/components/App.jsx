@@ -34,7 +34,7 @@ function App() {
 
       <Router>
         <Routes>
-          <Route path='/' element={localStorage.getItem('jwt') ? <Dashboard card={card} /> : <Navigate to={'/login'} />} />
+          <Route path='/' element={localStorage.getItem('jwt') ? <Dashboard /> : <Navigate to={'/login'} />} />
           <Route path='/transaction' element={localStorage.getItem('jwt') ? <Transaction card={card} /> : <Navigate to={'/login'} />} />
           <Route path='/recharge' element={localStorage.getItem('jwt') ? <Recharge card={card} /> : <Navigate to={'/login'} />} />
           <Route path='/controlcenter' element={localStorage.getItem('jwt') ? <ControlCenter /> : <Navigate to={'/login'} />} />
