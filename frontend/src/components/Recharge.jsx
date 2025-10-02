@@ -42,7 +42,7 @@ const Recharge = ({ card }) => {
         const order = response.data;
 
         var options = {
-            key: "rzp_test_sB7FZPk7D9C1CB",
+            key: process.env.REACT_APP_RAZORPAY_KEY,
             amount: amount * 100,
             currency,
             name: "Quest Card",
